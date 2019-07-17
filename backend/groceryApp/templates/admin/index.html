@@ -1,0 +1,11 @@
+{% extends "admin/index.html" %}
+{% load orders_tag %}
+
+{% block sidebar %}
+    {{block.super}}
+    <div>
+        <h1>Widget</h1>
+				<p>Count of pending orders: {% get_orders %}</p>
+        <a href="/admin/groceryApp/order/?processed__exact=0">Link to not yet processed orders</a>
+    </div>
+{% endblock %}
